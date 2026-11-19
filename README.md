@@ -15,7 +15,7 @@ estática (HTML + CSS + JavaScript), sin frameworks ni backend.
 - **Círculos del inicio:** Blue Galáctico (grande), Nube de Coco,
   Maracuyá Eléctrico y Chamoy Boom, con el vaso completo dentro de cada círculo.
 - **Pedidos:** botones de tamaño y configurador que abren WhatsApp con el pedido.
-- **Filtros** por categoría de sabor y galería actualizada.
+- **Filtros** por categoría de sabor y galería con las **7 fotos** de los sabores.
 - **Logo:** Granizados NeMar (reemplaza al anterior "Sweet Splash").
 
 ## 📁 Estructura usada por la página actual

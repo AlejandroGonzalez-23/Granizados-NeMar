@@ -1508,9 +1508,26 @@ h4 {
    GALERÍA
    ========================================================= */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+}
+
+.gallery-item {
+  flex: 0 0 calc((100% - 3rem) / 4);
+}
+
+@media (max-width: 980px) {
+  .gallery-item {
+    flex: 0 0 calc((100% - 1rem) / 2);
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery-item {
+    flex: 0 0 100%;
+  }
 }
 
 .gallery-item {
