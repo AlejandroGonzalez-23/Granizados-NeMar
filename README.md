@@ -1,79 +1,62 @@
-# 🍧 Granizados NeMar — Sweet Splash
+# 🍧 Granizados NeMar
 
-Sitio web de **Sweet Splash**, una marca de granizados, cócteles y malteadas.
-Página 100 % estática hecha con HTML y CSS, sin frameworks ni dependencias.
+Sitio oficial de **Granizados NeMar**. Versión actual: landing de una sola página,
+estática (HTML + CSS + JavaScript), sin frameworks ni backend.
 
 🔗 **Sitio en vivo:** https://alejandrogonzalez-23.github.io/Granizados-NeMar/
 
 ---
 
-## 📖 Descripción
+## ✨ Versión publicada (noviembre 2026)
 
-Landing page y páginas de categoría para presentar el catálogo de bebidas de la marca:
+- **7 sabores definitivos:** Fresa Salvaje, Mango Biche, Maracuyá Eléctrico,
+  Frambuesa Explosiva, Blue Galáctico, Nube de Coco y Chamoy Boom.
+- **Precios:** 8 oz $9.000 · 12 oz $11.000 · 16 oz $13.000. Toppings +$2.000.
+- **Círculos del inicio:** Blue Galáctico (grande), Nube de Coco,
+  Maracuyá Eléctrico y Chamoy Boom, con el vaso completo dentro de cada círculo.
+- **Pedidos:** botones de tamaño y configurador que abren WhatsApp con el pedido.
+- **Filtros** por categoría de sabor y galería actualizada.
+- **Logo:** Granizados NeMar (reemplaza al anterior "Sweet Splash").
 
-- **Inicio** — banner principal, categorías, sección de impacto y pie de página.
-- **Granizados** — Mango, Blue, Mango biche y Tussi.
-- **Cócteles** — Negroni, Mojito, Sangría y Margarita.
-- **Malteadas** — Chocolate intenso, Oreo Shake, Café Vainilla y Berry & Bits.
-
-## 🗂️ Estructura del proyecto
+## 📁 Estructura usada por la página actual
 
 ```
 Granizados-NeMar/
-├── index.html          # Página de inicio
-├── granizados.html     # Categoría: granizados
-├── cocteles.html       # Categoría: cócteles
-├── malteadas.html      # Categoría: malteadas
-├── style.css           # Hoja de estilos compartida
-├── img/                # Imágenes de productos y banner de las páginas internas
-├── img2/               # Imágenes del home y banners de categorías
-├── fonts/              # Tipografías propias (Acroterion JF y Benguiat Pro ITC)
+├── index.html          # landing completa
+├── styles.css          # diseño y responsive
+├── script.js           # filtros, precios y WhatsApp
+├── assets/
+│   ├── img/            # fotos de sabores, círculos del hero y logos
+│   └── fonts/          # tipografías
+├── .nojekyll           # permite publicar tal cual en GitHub Pages
 └── README.md
 ```
 
-## 🛠️ Tecnologías
-
-| Tecnología | Uso |
-| --- | --- |
-| HTML5 | Estructura de las 4 páginas |
-| CSS3 | Diseño, tipografías, banners y tarjetas |
-| GitHub Pages | Publicación del sitio |
-
-Sin JavaScript, sin backend y sin base de datos: todo el contenido está en el HTML.
-
-## ▶️ Cómo verlo localmente
-
-1. Clona el repositorio:
-
-   ```bash
-   git clone https://github.com/AlejandroGonzalez-23/Granizados-NeMar.git
-   ```
-
-2. Abre `index.html` en tu navegador (doble clic), o levanta un servidor local:
-
-   ```bash
-   python -m http.server 8000
-   ```
-
-3. Visita `http://localhost:8000`.
+Los archivos `cocteles.html`, `granizados.html`, `malteadas.html`, `style.css`,
+`img/`, `img2/` y `fonts/` en la raíz son de la **versión anterior** y ya no son
+usados por `index.html`. Se conservan como historial del proyecto.
 
 ## 🚀 Publicación
 
-El sitio se publica automáticamente con **GitHub Pages** desde la rama `main`
-(carpeta raíz). Cada `push` a `main` actualiza la página en vivo en unos minutos.
+GitHub Pages publica la rama `main` de este repositorio. Para actualizar:
 
-## 📌 Estado y siguientes pasos
+```bash
+git add .
+git commit -m "Actualiza sitio de Granizados NeMar"
+git push
+```
 
-- [x] Maquetación de las 4 páginas
-- [x] Catálogo con imágenes y precios de referencia
-- [x] Publicación en GitHub Pages
-- [ ] Ajustes de diseño y contenido
-- [ ] Carrito y login funcionales (requerirían backend)
+## 💻 Verlo localmente
 
-## ✍️ Autor
+```bash
+python -m http.server 8000
+```
 
-**Alejandro González** — [@AlejandroGonzalez-23](https://github.com/AlejandroGonzalez-23)
+Luego abrir `http://localhost:8000`.
 
----
+## ⏳ Datos pendientes de confirmar con el negocio
 
-© 2025 Sweet Splash. Todos los derechos reservados.
+- Número real de WhatsApp (actualmente hay uno de ejemplo en `script.js`).
+- Dirección, horarios y enlaces de redes sociales.
+- Medios de pago y condiciones de domicilio.
+- Promociones y fotografías propias del negocio.
