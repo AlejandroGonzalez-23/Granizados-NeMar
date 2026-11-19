@@ -906,6 +906,21 @@ h4 {
   background: var(--morado-suave);
 }
 
+.size-option.is-selected {
+  border-color: var(--morado-oscuro);
+  background: var(--morado);
+  color: #fff;
+}
+
+.size-option.is-selected::after {
+  content: "✓";
+  font-weight: 700;
+}
+
+.size-option.is-selected b {
+  color: #fff;
+}
+
 .size-option:focus-visible {
   outline: 3px solid var(--amarillo);
   outline-offset: 2px;

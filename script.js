@@ -23,29 +23,48 @@ function initWhatsAppLinks() {
   });
 }
 
-/* ---------- Botones "Pedir" de cada producto ---------- */
+/* ---------- Botones "Pedir" de cada producto ----------
+   Solo estos botones abren WhatsApp. Si el usuario seleccionó un tamaño
+   en la tarjeta, el mensaje lo incluye; si no, muestra las presentaciones. */
 function initProductButtons() {
-  document.querySelectorAll("[data-product]").forEach((button) => {
+  document.querySelectorAll(".product-card .btn-block[data-product]").forEach((button) => {
     button.addEventListener("click", () => {
       const product = button.dataset.product;
-      const message =
-        `Hola, quiero pedir un granizado de ${product} 🍧\n` +
-        "Presentaciones: 8 oz $9.000 · 12 oz $11.000 · 16 oz $13.000\n" +
-        "¿Me confirmas disponibilidad?";
+      const card = button.closest(".product-card");
+      const selected = card ? card.querySelector(".size-option.is-selected") : null;
+
+      let message;
+      if (selected) {
+        const { size, price } = selected.dataset;
+        message =
+          `Hola, quiero pedir un granizado de ${product} de ${size} (${money(price)}) 🍧\n` +
+          "¿Me confirmas disponibilidad?";
+      } else {
+        message =
+          `Hola, quiero pedir un granizado de ${product} 🍧\n` +
+          "Presentaciones: 8 oz $9.000 · 12 oz $11.000 · 16 oz $13.000\n" +
+          "¿Me confirmas disponibilidad?";
+      }
       window.open(waLink(message), "_blank", "noopener,noreferrer");
     });
   });
 }
 
-/* ---------- Elegir tamaño desde la tarjeta ---------- */
+/* ---------- Elegir tamaño desde la tarjeta ----------
+   Marca visualmente la opción elegida, sin abrir WhatsApp. */
 function initSizeOptions() {
-  document.querySelectorAll(".size-option").forEach((button) => {
-    button.addEventListener("click", () => {
-      const { product, size, price } = button.dataset;
-      const message =
-        `Hola, quiero pedir un granizado de ${product} de ${size} (${money(price)}) 🍧\n` +
-        "¿Me confirmas disponibilidad?";
-      window.open(waLink(message), "_blank", "noopener,noreferrer");
+  document.querySelectorAll(".product-card").forEach((card) => {
+    const sizes = [...card.querySelectorAll(".size-option")];
+
+    sizes.forEach((button) => {
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => {
+        sizes.forEach((option) => {
+          const active = option === button;
+          option.classList.toggle("is-selected", active);
+          option.setAttribute("aria-pressed", String(active));
+        });
+      });
     });
   });
 }
