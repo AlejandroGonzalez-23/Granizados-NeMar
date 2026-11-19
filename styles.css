@@ -910,6 +910,7 @@ h4 {
   border-color: var(--morado-oscuro);
   background: var(--morado);
   color: #fff;
+  transition: none;
 }
 
 .size-option.is-selected::after {
